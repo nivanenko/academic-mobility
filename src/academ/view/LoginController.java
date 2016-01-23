@@ -29,7 +29,6 @@ public class LoginController {
     private PasswordField passwordField;
 
     private Stage dialogStage;
-
     private MainApp mainApp;
 
     /**
@@ -60,7 +59,11 @@ public class LoginController {
         if (isInputValid()) {
 
         }
+    }
 
+    private boolean isAdmin() {
+
+        return false;
     }
 
     /**
@@ -89,8 +92,12 @@ public class LoginController {
             alert.setContentText(errorMessage);
 
             alert.showAndWait();
-
             return false;
         }
+    }
+
+    @FXML
+    private void handleRegister() {
+        mainApp.showReg();
     }
 }

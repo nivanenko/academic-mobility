@@ -2,6 +2,7 @@ package academ;
 
 import academ.view.AboutController;
 import academ.view.LoginController;
+import academ.view.RegisterController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -69,7 +70,6 @@ public class MainApp extends Application {
             Scene scene = new Scene(about);
             dialogStage.setScene(scene);
 
-
             // Set the about into the controller.
             AboutController controller = loader.getController();
             controller.setDialogStage(dialogStage);
@@ -79,7 +79,31 @@ public class MainApp extends Application {
         } catch (IOException e) {
             System.err.println("IO error: " + e.getMessage());
         }
+    }
 
+    public void showReg() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/register.fxml"));
+            AnchorPane register = (AnchorPane) loader.load();
+
+            // Create the dialog stage
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Registration");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(register);
+            dialogStage.setScene(scene);
+
+            // Set the about into the controller.
+            RegisterController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+        } catch (IOException e) {
+            System.err.println("IO error: " + e.getMessage());
+        }
     }
 
     public static void main(String[] args) {
