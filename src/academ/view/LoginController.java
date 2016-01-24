@@ -1,6 +1,7 @@
 package academ.view;
 
 import academ.MainApp;
+import academ.util.DatabaseHelper;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -54,17 +55,15 @@ public class LoginController {
 
     @FXML
     private void handleSignin() {
-        String login = "";
-        String password = "";
-        if (isInputValid()) {
-
+        String login = loginField.getText();
+        String password = passwordField.getText();
+        if(DatabaseHelper.userCheck(login, password)){
+            mainApp.showUser();
         }
+
     }
 
-    private boolean isAdmin() {
 
-        return false;
-    }
 
     /**
      * Validates the user input in the text fields.

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="academ.view.RegisterController">
+   <children>
+      <Label layoutX="89.0" layoutY="106.0" text="Name:" />
+      <Label layoutX="90.0" layoutY="133.0" text="Login:" />
+      <Label layoutX="88.0" layoutY="162.0" text="Password:" />
+      <Label layoutX="88.0" layoutY="192.0" text="Confirm password:" />
+      <TextField fx:id="nameField" layoutX="210.0" layoutY="102.0" />
+      <TextField fx:id="loginField" layoutX="210.0" layoutY="129.0" />
+      <PasswordField fx:id="firstPassField" layoutX="210.0" layoutY="158.0" />
+      <PasswordField fx:id="secondPassField" layoutX="210.0" layoutY="188.0" />
+      <Button defaultButton="true" layoutX="210.0" layoutY="235.0" mnemonicParsing="false" onAction="#handleSubmit" text="Submit" />
+      <Button cancelButton="true" layoutX="285.0" layoutY="235.0" mnemonicParsing="false" text="Cancel" />
+      <Label fx:id="status" layoutX="187.0" layoutY="360.0" />
+   </children>
+</AnchorPane>

@@ -84,7 +84,7 @@ public class MainApp extends Application {
     public void showReg() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/register.fxml"));
+            loader.setLocation(MainApp.class.getResource("view/registerFrame.fxml"));
             AnchorPane register = (AnchorPane) loader.load();
 
             // Create the dialog stage
@@ -105,6 +105,34 @@ public class MainApp extends Application {
             System.err.println("IO error: " + e.getMessage());
         }
     }
+
+    public void showUser() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/users.fxml"));
+            AnchorPane register = (AnchorPane) loader.load();
+
+            rootLayout.setCenter(register);
+
+            // Create the dialog stage
+           // Stage dialogStage = new Stage();
+           // dialogStage.setTitle("Easy Academ Mobility main");
+            //dialogStage.initModality(Modality.WINDOW_MODAL);
+            //dialogStage.initOwner(primaryStage);
+           /* Scene scene = new Scene(register);
+            dialogStage.setScene(scene);*/
+
+
+
+            // Show the dialog and wait until the user closes it
+           // dialogStage.showAndWait();
+            RegisterController controller = loader.getController();
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            System.err.println("IO error: " + e.getMessage());
+        }
+    }
+
 
     public static void main(String[] args) {
         launch(args);
